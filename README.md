@@ -12,6 +12,7 @@ Technologies being used:
 * validation-api 1.1.0.Final
 * hibernate-validator 5.4.0.Final
 * MySQL Server 5.7
+* Bootstrap 3.3.7
 * Maven 3
 * JDK 1.8
 * Tomcat 8.5
