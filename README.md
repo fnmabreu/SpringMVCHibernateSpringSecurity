@@ -7,7 +7,7 @@ The project shows a simple user-management application. One can create a new use
 
 Technologies being used:
 * Spring 4.3.6.RELEASE
-* Spring Security 4.2.1 RELEASE
+* Spring Security 4.2.1.RELEASE
 * Hibernate Core 5.1.3.Final
 * validation-api 1.1.0.Final
 * hibernate-validator 5.4.0.Final
