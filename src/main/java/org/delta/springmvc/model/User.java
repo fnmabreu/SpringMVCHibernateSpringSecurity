@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -67,6 +69,9 @@ public class User implements Serializable{
 	@JoinTable(name = "app_user_user_profile", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "user_profile_id") })
 	private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
 
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<UserDocument> userDocuments = new HashSet<UserDocument>();
+	
 	public Integer getId() {
 		return id;
 	}
@@ -121,6 +126,14 @@ public class User implements Serializable{
 
 	public void setUserProfiles(Set<UserProfile> userProfiles) {
 		this.userProfiles = userProfiles;
+	}
+
+	public Set<UserDocument> getUserDocuments() {
+		return userDocuments;
+	}
+
+	public void setUserDocuments(Set<UserDocument> userDocuments) {
+		this.userDocuments = userDocuments;
 	}
 
 	@Override
